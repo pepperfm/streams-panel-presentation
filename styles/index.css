@@ -121,6 +121,49 @@ body,
   color: var(--sp-white);
 }
 
+.slidev-layout.sp-cover a.sp-cover__url.is-secondary {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  opacity: 0.92;
+}
+
+.slidev-layout.sp-cover a.sp-cover__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 40px;
+  padding: 18px 36px;
+  border: none;
+  border-radius: 14px;
+  background: var(--sp-white);
+  color: var(--sp-violet);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(20, 18, 24, 0.22);
+  cursor: pointer;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.slidev-layout.sp-cover a.sp-cover__cta:hover {
+  border: none;
+  background: var(--sp-frame);
+  color: var(--sp-violet);
+}
+
+.slidev-layout.sp-cover a.sp-cover__cta:focus-visible {
+  outline: 3px solid var(--sp-white);
+  outline-offset: 4px;
+}
+
 /* Content slides */
 
 .slidev-layout.sp-slide {

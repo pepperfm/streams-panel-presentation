@@ -75,7 +75,7 @@ headline: Расписание и очередь событий
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: расписание в панели" />
+<Shot src="/screens/03-schedule-v2.jpg" caption="Скриншот: расписание в панели" />
 
 ---
 layout: content
@@ -99,7 +99,7 @@ headline: Постер недели и AI-обложки
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: редактор постера недели" />
+<Shot src="/screens/04-poster-v2.jpg" caption="Скриншот: редактор постера недели" />
 
 ---
 layout: content
@@ -123,7 +123,7 @@ headline: Публичная страница стримера
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: публичная страница стримера" />
+<Shot src="/screens/05-public-page-v2.jpg" caption="Скриншот: публичная страница стримера" />
 
 ---
 layout: content
@@ -147,7 +147,10 @@ headline: Товары, услуги и вишлист
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: товары и вишлист на публичной странице" />
+<div class="sp-shots">
+  <Shot src="/screens/06a-public-products-v2.jpg" caption="Скриншот: товары на публичной странице" />
+  <Shot src="/screens/06c-public-wishlist-v2.jpg" caption="Скриншот: вишлист на публичной странице" />
+</div>
 
 ---
 layout: content
@@ -171,7 +174,7 @@ headline: Донаты и топ донатеров
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: страница донатов" />
+<Shot src="/screens/07a-public-top-v2.jpg" caption="Скриншот: страница донатов" />
 
 ---
 layout: content
@@ -195,7 +198,7 @@ headline: Заказ музыки из Яндекс Музыки
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: очередь треков в панели" />
+<Shot src="/screens/08a-music-queue-v2.jpg" caption="Скриншот: очередь треков в панели" />
 
 ---
 layout: content
@@ -219,7 +222,7 @@ headline: StreamsPanel Player
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: окно StreamsPanel Player" />
+<Shot src="/screens/09-music-player-v2.jpg" caption="Скриншот: подключение StreamsPanel Player в панели" />
 
 ---
 layout: content
@@ -243,7 +246,7 @@ headline: Виджеты для стрима
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: список виджетов" />
+<Shot src="/screens/10-widgets-v2.jpg" caption="Скриншот: список виджетов" />
 
 ---
 layout: content
@@ -267,7 +270,7 @@ headline: Настройка и публикация виджетов
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: редактор виджета чата с превью" />
+<Shot src="/screens/11-widget-editor-chat-v2.jpg" caption="Скриншот: редактор виджета чата с превью" />
 
 ---
 layout: content
@@ -291,7 +294,7 @@ headline: Уведомления в Telegram
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: настройки Telegram в профиле панели" />
+<Shot src="/screens/12-telegram-profile-v2.jpg" caption="Скриншот: настройки Telegram в профиле панели" />
 
 ---
 layout: content
@@ -315,16 +318,16 @@ headline: AI-ассистент и отчёты
   </div>
 </CardGrid>
 
-<Shot caption="Скриншот: чат ассистента и страница отчётов" />
+<Shot src="/screens/13-assistant-slideover-v2.jpg" caption="Скриншот: чат ассистента в панели" />
 
 ---
 layout: content
-variant: stack
+variant: split
 kicker: ВОЗМОЖНОСТИ · ЕЩЁ В ПАНЕЛИ
 headline: Дашборд, подписка и обновления
 ---
 
-<CardGrid :columns="2">
+<CardGrid :columns="2" stretch>
   <div v-click class="sp-reveal">
     <Card title="Дашборд" text="Ближайшие эфиры, очередь событий и топ донатов на одном экране" />
   </div>
@@ -338,6 +341,8 @@ headline: Дашборд, подписка и обновления
     <Card title="Русский и английский" text="Интерфейс переключается между RU и EN" />
   </div>
 </CardGrid>
+
+<Shot src="/screens/14-dashboard-v2.jpg" caption="Скриншот: дашборд в панели" />
 
 ---
 layout: content

@@ -13,12 +13,13 @@ const hasImage = computed(() => imageSrc.value.length > 0)
 
 <template>
   <figure class="sp-shot" :class="{ 'is-filled': hasImage }">
-    <img
-      v-if="hasImage"
-      class="sp-shot__img"
-      :src="imageSrc"
-      :alt="alt || caption"
-    >
+    <div v-if="hasImage" class="sp-shot__media">
+      <img
+        class="sp-shot__img"
+        :src="imageSrc"
+        :alt="alt || caption"
+      >
+    </div>
     <div class="sp-shot__caption">{{ caption }}</div>
   </figure>
 </template>

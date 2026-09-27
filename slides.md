@@ -376,5 +376,6 @@ footnote: |
 layout: cover
 headline: Подготовь следующий эфир вместе со StreamsPanel
 subtitle: Новым аккаунтам — 7 дней пробного доступа к панели «Старт»
+cta: Попробовать бесплатно
 website: streams-panel.ru
 ---

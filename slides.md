@@ -24,6 +24,7 @@ fonts:
   provider: none
 layout: cover
 hero: true
+headline: Streams Panel
 kicker: ПРЕЗЕНТАЦИЯ ПРОДУКТА
 subtitle: |
   Подготовь стрим и управляй им из одной панели.
@@ -35,7 +36,7 @@ website: streams-panel.ru
 layout: content
 variant: stack
 kicker: ЧТО ЭТО И ДЛЯ КОГО
-title: Одна панель для стримера и его зрителей
+headline: Одна панель для стримера и его зрителей
 lead: Личная панель для подготовки эфиров и публичная страница для зрителей
 footnote: "Для кого: стримеры на Twitch. Донаты — из DonationAlerts, DonateX и DonatePay"
 ---
@@ -56,7 +57,7 @@ footnote: "Для кого: стримеры на Twitch. Донаты — из 
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · ПОДГОТОВКА ЭФИРОВ
-title: Расписание и очередь событий
+headline: Расписание и очередь событий
 ---
 
 <CardGrid stretch>
@@ -80,7 +81,7 @@ title: Расписание и очередь событий
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · АНОНСЫ
-title: Постер недели и AI-обложки
+headline: Постер недели и AI-обложки
 ---
 
 <CardGrid stretch>
@@ -104,7 +105,7 @@ title: Постер недели и AI-обложки
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · СТРАНИЦА ДЛЯ ЗРИТЕЛЕЙ
-title: Публичная страница стримера
+headline: Публичная страница стримера
 ---
 
 <CardGrid stretch>
@@ -128,7 +129,7 @@ title: Публичная страница стримера
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · ВИТРИНА
-title: Товары, услуги и вишлист
+headline: Товары, услуги и вишлист
 ---
 
 <CardGrid stretch>
@@ -152,7 +153,7 @@ title: Товары, услуги и вишлист
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · ДОНАТЫ
-title: Донаты и топ донатеров
+headline: Донаты и топ донатеров
 ---
 
 <CardGrid stretch>
@@ -176,7 +177,7 @@ title: Донаты и топ донатеров
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · НА СТРИМЕ
-title: Заказ музыки из Яндекс Музыки
+headline: Заказ музыки из Яндекс Музыки
 ---
 
 <CardGrid stretch>
@@ -200,7 +201,7 @@ title: Заказ музыки из Яндекс Музыки
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · НА СТРИМЕ
-title: StreamsPanel Player
+headline: StreamsPanel Player
 ---
 
 <CardGrid stretch>
@@ -224,7 +225,7 @@ title: StreamsPanel Player
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · OBS
-title: Виджеты для стрима
+headline: Виджеты для стрима
 ---
 
 <CardGrid stretch>
@@ -248,7 +249,7 @@ title: Виджеты для стрима
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · OBS
-title: Настройка и публикация виджетов
+headline: Настройка и публикация виджетов
 ---
 
 <CardGrid stretch>
@@ -272,7 +273,7 @@ title: Настройка и публикация виджетов
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · TELEGRAM
-title: Уведомления в Telegram
+headline: Уведомления в Telegram
 ---
 
 <CardGrid stretch>
@@ -296,7 +297,7 @@ title: Уведомления в Telegram
 layout: content
 variant: split
 kicker: ВОЗМОЖНОСТИ · AI-АССИСТЕНТ
-title: AI-ассистент и отчёты
+headline: AI-ассистент и отчёты
 ---
 
 <CardGrid stretch>
@@ -318,12 +319,12 @@ title: AI-ассистент и отчёты
 
 ---
 layout: content
-variant: fill
+variant: stack
 kicker: ВОЗМОЖНОСТИ · ЕЩЁ В ПАНЕЛИ
-title: Дашборд, подписка и обновления
+headline: Дашборд, подписка и обновления
 ---
 
-<CardGrid :columns="2" stretch>
+<CardGrid :columns="2">
   <div v-click class="sp-reveal">
     <Card title="Дашборд" text="Ближайшие эфиры, очередь событий и топ донатов на одном экране" />
   </div>
@@ -342,7 +343,7 @@ title: Дашборд, подписка и обновления
 layout: content
 variant: stack
 kicker: КАК НАЧАТЬ
-title: От подключения до первого расписания
+headline: От подключения до первого расписания
 footnote: |
   По желанию: установите StreamsPanel Player для заказа музыки и добавьте виджеты в OBS.
   Подсказки — во встроенном туре по панели; на сайте есть гайды и AI-помощник.
@@ -365,7 +366,7 @@ footnote: |
 
 ---
 layout: cover
-title: Подготовь следующий эфир вместе со StreamsPanel
+headline: Подготовь следующий эфир вместе со StreamsPanel
 subtitle: Новым аккаунтам — 7 дней пробного доступа к панели «Старт»
 website: streams-panel.ru
 ---

@@ -5,7 +5,7 @@ defineOptions({ inheritAttrs: false })
 
 const props = defineProps<{
   kicker?: string
-  title?: string
+  headline?: string
   lead?: string
   footnote?: string
   variant?: 'split' | 'stack' | 'fill'
@@ -19,7 +19,7 @@ const leadText = computed(() => props.lead?.trim() ?? '')
   <div class="slidev-layout sp-slide" :class="`is-${variant || 'stack'}`">
     <header class="sp-head">
       <div v-if="kicker" class="sp-kicker">{{ kicker }}</div>
-      <h1 class="sp-title">{{ title }}</h1>
+      <h1 class="sp-title">{{ headline }}</h1>
       <div v-if="leadText" class="sp-lead">{{ leadText }}</div>
     </header>
     <div class="sp-body" :class="{ 'is-split': variant === 'split' }">

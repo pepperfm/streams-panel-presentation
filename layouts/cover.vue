@@ -5,7 +5,7 @@ defineOptions({ inheritAttrs: false })
 
 const props = defineProps<{
   kicker?: string
-  title?: string
+  headline?: string
   subtitle?: string
   website?: string
   hero?: boolean
@@ -23,7 +23,7 @@ const href = computed(() => {
   <div class="slidev-layout sp-cover" :class="{ 'is-hero': hero }">
     <div class="sp-cover__main">
       <div v-if="kicker" class="sp-cover__kicker">{{ kicker }}</div>
-      <h1 class="sp-cover__title">{{ title }}</h1>
+      <h1 class="sp-cover__title">{{ headline }}</h1>
       <div v-if="subtitleText" class="sp-cover__sub">{{ subtitleText }}</div>
     </div>
     <a v-if="website" class="sp-cover__url" :href="href">{{ website }}</a>

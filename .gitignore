@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.slidev/
+.vite/
+*.pdf
+*.local
+.DS_Store
+slides-export/

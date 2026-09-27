@@ -326,6 +326,43 @@ body,
   background: var(--sp-white);
 }
 
+#page-root .sp-shot__img {
+  cursor: zoom-in;
+}
+
+.sp-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 8, 12, 0.82);
+}
+
+.sp-lightbox__img {
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.sp-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: #141218;
+  font: 600 16px/1 'Inter Variable', Inter, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
 .sp-shots {
   display: flex;
   flex-direction: column;

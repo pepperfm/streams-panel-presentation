@@ -80,7 +80,7 @@ function shouldIgnoreTarget(target: EventTarget | null) {
 }
 
 export default defineRootSetup(() => {
-  const { next, prev, isPlaying, isPresenter, isPrintMode } = useNav()
+  const { next, isPlaying, isPresenter, isPrintMode } = useNav()
   const { drawingEnabled } = useDrawings()
 
   // Timestamp of the primary mouse press that may become a click.
@@ -101,8 +101,8 @@ export default defineRootSetup(() => {
     if (!primaryMouse || !inPlayMode())
       return
 
-    // play.vue also calls next/prev on pointerdown when the target is #slide-container
-    // (50/50 split). Stop that so a letterbox click is handled once, with the 1/3 split.
+    // play.vue also navigates on pointerdown when the target is #slide-container
+    // (left half prev, right half next). Stop that so the click is handled once, as next().
     const element = eventTargetElement(event.target)
     if (element?.id === 'slide-container')
       event.stopPropagation()
@@ -114,10 +114,7 @@ export default defineRootSetup(() => {
     if (!armed || !inPlayMode() || isModifiedClick(event) || hasTextSelection() || shouldIgnoreTarget(event.target))
       return
 
-    if (event.clientX < window.innerWidth / 3)
-      void prev()
-    else
-      void next()
+    void next()
   }
 
   onMounted(() => {

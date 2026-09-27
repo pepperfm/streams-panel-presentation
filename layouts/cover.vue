@@ -23,6 +23,9 @@ const href = computed(() => {
 
 <template>
   <div class="slidev-layout sp-cover" :class="{ 'is-hero': hero }">
+    <div v-if="hero" class="sp-logo">
+      <span class="sp-logo__accent">S</span>treams<span class="sp-logo__accent">P</span>anel
+    </div>
     <div class="sp-cover__main">
       <div v-if="kicker" class="sp-cover__kicker">{{ kicker }}</div>
       <h1 class="sp-cover__title">{{ headline }}</h1>

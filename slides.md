@@ -222,7 +222,10 @@ headline: StreamsPanel Player
   </div>
 </CardGrid>
 
-<Shot src="/screens/09-music-player-v2.jpg" caption="Скриншот: подключение StreamsPanel Player в панели" />
+<div class="sp-shots">
+  <Shot src="/screens/09a-player-landing-demo.jpg" caption="Интерфейс StreamsPanel Player: сейчас играет и очередь" />
+  <Shot src="/screens/09c-player-settings.jpg" caption="Скриншот: статус подключения в StreamsPanel Player" />
+</div>
 
 ---
 layout: content

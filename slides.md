@@ -5,7 +5,7 @@ titleTemplate: '%s'
 info: Презентация продукта Streams Panel
 author: Streams Panel
 lang: ru
-colorSchema: light
+colorSchema: dark
 transition: fade
 aspectRatio: 16/9
 canvasWidth: 1920
@@ -203,6 +203,7 @@ headline: Заказ музыки из Яндекс Музыки
 ---
 layout: content
 variant: split
+accent: player
 kicker: ВОЗМОЖНОСТИ · НА СТРИМЕ
 headline: StreamsPanel Player
 ---

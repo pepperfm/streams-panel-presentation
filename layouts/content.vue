@@ -9,6 +9,7 @@ const props = defineProps<{
   lead?: string
   footnote?: string
   variant?: 'split' | 'stack' | 'fill'
+  accent?: string
 }>()
 
 const note = computed(() => props.footnote?.trim() ?? '')
@@ -16,7 +17,10 @@ const leadText = computed(() => props.lead?.trim() ?? '')
 </script>
 
 <template>
-  <div class="slidev-layout sp-slide" :class="`is-${variant || 'stack'}`">
+  <div
+    class="slidev-layout sp-slide"
+    :class="[`is-${variant || 'stack'}`, { 'is-player': props.accent === 'player' }]"
+  >
     <header class="sp-head">
       <div v-if="kicker" class="sp-kicker">{{ kicker }}</div>
       <h1 class="sp-title">{{ headline }}</h1>

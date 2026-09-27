@@ -37,7 +37,7 @@ bunx slidev export --format png --output slides-png
 
 ## Как добавить скриншот
 
-Положите файл в `public/screens/` и укажите путь в компоненте `Shot`. Если `src` не задан, остаётся светло-фиолетовая рамка с подписью.
+Положите файл в `public/screens/` и укажите путь в компоненте `Shot`. Если `src` не задан, остаётся тёмная рамка с подписью.
 
 ```html
 <Shot src="/screens/schedule.png" caption="Скриншот: расписание в панели" />

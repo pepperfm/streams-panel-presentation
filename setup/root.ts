@@ -3,6 +3,7 @@ import { useDrawings, useNav } from '@slidev/client'
 import { showOverview } from '@slidev/client/state/storage.ts'
 import { defineRootSetup } from '@slidev/types'
 import { onMounted, onUnmounted } from 'vue'
+import { lightboxSrc, openLightbox } from './lightbox'
 
 /**
  * Click targets that must keep their own behavior (links, form controls, etc.).
@@ -44,6 +45,7 @@ const SLIDEV_UI_SELECTOR = [
   '.z-nav',
   '.recording-dialog',
   '.slidev-presenter',
+  '.sp-lightbox',
 ].join(',')
 
 function eventTargetElement(target: EventTarget | null) {
@@ -67,9 +69,21 @@ function hasTextSelection() {
   return !!selection && !selection.isCollapsed && selection.toString().length > 0
 }
 
+function screenshotImage(target: EventTarget | null) {
+  const element = eventTargetElement(target)
+  if (!(element instanceof Element))
+    return null
+  const image = element.closest('img.sp-shot__img')
+  if (!(image instanceof HTMLImageElement) || !image.closest('#slide-content'))
+    return null
+  return image
+}
+
 function shouldIgnoreTarget(target: EventTarget | null) {
   const element = eventTargetElement(target)
   if (!element)
+    return true
+  if (screenshotImage(element))
     return true
   if (element.closest(INTERACTIVE_SELECTOR))
     return true
@@ -86,19 +100,25 @@ export default defineRootSetup(() => {
   // Timestamp of the primary mouse press that may become a click.
   let armedAt = 0
 
-  function inPlayMode() {
+  function inPlaySurface() {
     return isPlaying.value
       && !isPresenter.value
       && !isPrintMode.value
       && !showOverview.value
-      && !drawingEnabled.value
+  }
+
+  function canClickNext() {
+    return inPlaySurface() && !drawingEnabled.value && !lightboxSrc.value
   }
 
   function onPointerDown(event: PointerEvent) {
     const primaryMouse = event.pointerType === 'mouse' && event.button === 0
+    const canOpenShot = inPlaySurface() && !lightboxSrc.value && !!screenshotImage(event.target)
     // Selection is still intact on pointerdown; a later click often clears it.
-    armedAt = primaryMouse && !isModifiedClick(event) && !hasTextSelection() ? performance.now() : 0
-    if (!primaryMouse || !inPlayMode())
+    armedAt = primaryMouse && !isModifiedClick(event) && !hasTextSelection() && (canClickNext() || canOpenShot)
+      ? performance.now()
+      : 0
+    if (!primaryMouse || !canClickNext())
       return
 
     // play.vue also navigates on pointerdown when the target is #slide-container
@@ -111,7 +131,16 @@ export default defineRootSetup(() => {
   function onClick(event: MouseEvent) {
     const armed = armedAt > 0 && performance.now() - armedAt < 1000
     armedAt = 0
-    if (!armed || !inPlayMode() || isModifiedClick(event) || hasTextSelection() || shouldIgnoreTarget(event.target))
+    if (!armed || !inPlaySurface() || isModifiedClick(event) || hasTextSelection() || lightboxSrc.value)
+      return
+
+    const image = screenshotImage(event.target)
+    if (image) {
+      openLightbox(image.currentSrc || image.src, image.alt)
+      return
+    }
+
+    if (!canClickNext() || shouldIgnoreTarget(event.target))
       return
 
     void next()

@@ -1,64 +1,53 @@
-# Nuxt Starter Template
+# StreamsPanel — video presentations
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Static landing page for `presentations.streams-panel.ru`, built on the [Nuxt UI starter](https://github.com/nuxt-ui-templates/starter) (Nuxt 4 + Nuxt UI v4, bun).
+Videos are not in git and not in the build: they live on the Beget CDN, and the page reads them from one base URL.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+## Env
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+| Variable | Default | Meaning |
+|---|---|---|
+| `NUXT_PUBLIC_VIDEO_BASE_URL` | `/videos` | Base URL of the media files, no trailing slash, e.g. `https://<cdn-domain>/presentations` |
+| `NUXT_PUBLIC_SITE_URL` | `https://streams-panel.ru` | Target of every CTA |
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+Values are baked in at `bun run generate` time.
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
-
-## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t ui
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
-
-## Setup
-
-Make sure to install the dependencies:
+## Commands
 
 ```bash
-pnpm install
+bun install
+bun run media                 # build media/ (gitignored) from the final videos; SRC=, CONCEPTS=, OUT= override paths
+bun run lint                  # on Node < 21 run as: bun --bun run lint
+bun run typecheck
+NUXT_PUBLIC_VIDEO_BASE_URL=https://<cdn-domain>/presentations bun run generate
+bun run preview:static        # http://localhost:4173 — serves .output/public, maps /videos/* to media/
+bun run dev                   # dev server (videos need NUXT_PUBLIC_VIDEO_BASE_URL or a public/videos link)
 ```
 
-## Development Server
+## Deploy
 
-Start the development server on `http://localhost:3000`:
+1. **CDN bucket** — upload everything from `media/` flat into the folder `NUXT_PUBLIC_VIDEO_BASE_URL` points to:
+   - hero «Было → Стало»: `bylo-stalo-1080.mp4`, `bylo-stalo-720.mp4`, `bylo-stalo-poster.webp`, `bylo-stalo-poster.jpg`
+   - teaser «Один вопрос»: `odin-vopros-*` (same four files)
+   - long trailer: `trailer-*` (same four files)
+   - chapters `01-vhod-i-profil`, `02-panel`, `03-assistant`, `04-widget`, `05-style`: the four files above plus `<id>-preview.webm`, `<id>-preview.mp4`
+   - `manifest.json` — inventory (durations, sizes), not used by the page
 
-```bash
-pnpm dev
-```
+   Public-read, correct `Content-Type` (`video/mp4`, `video/webm`, `image/webp`, `image/jpeg`), Range requests allowed.
+   Cache long (`max-age=31536000`); when replacing a video, upload under a new name or purge the CDN. No CORS needed.
+2. **Static hosting** — upload the contents of `.output/public/` to the site root.
 
-## Production
+## Media
 
-Build the application for production:
+- `*-1080.mp4` — final masters (H.264 High, yuv420p, avc1, AAC-LC 48 kHz, faststart), wider than 768px.
+- `*-720.mp4` — mobile variants (CRF 23, AAC 128k, faststart) via `<source media="(max-width: 768px)">`.
+- `*-poster.webp|jpg` — 1280px posters; `*-preview.webm|mp4` — muted 4 s 480p hover loops for chapter cards.
 
-```bash
-pnpm build
-```
+All players use `preload="none"`, nothing heavy loads before play.
 
-Locally preview production build:
+## Code
 
-```bash
-pnpm preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+- `app/data/videos.ts` — titles, one-liners, durations.
+- `app/composables/useVideoMedia.ts` — media URLs from `videoBaseUrl`.
+- `app/components/VideoPlayer.vue`, `ChapterCard.vue`, `AppLogo.vue`; `app/pages/index.vue`.
+- Theme: `app/app.config.ts` (orange / neutral) and `app/assets/css/main.css` (Inter, `--ui-radius: 0.375rem`), as in `pepperfm/streams-panel`.

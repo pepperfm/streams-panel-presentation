@@ -9,7 +9,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "media": "bash scripts/media.sh",
+    "preview:static": "bun scripts/preview.mjs"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.139",

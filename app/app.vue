@@ -1,53 +1,53 @@
-<script setup>
+<script setup lang="ts">
+const siteUrl = useRuntimeConfig().public.siteUrl
+
 useHead({
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'theme-color', content: '#0a0a0a' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
+    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+    { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
+  ]
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const title = 'StreamsPanel — видео-презентация'
+const description = 'Донаты и топ донатеров, расписание и постер недели, вишлист и магазин, виджеты для OBS и ИИ-ассистент в одной панели для стримеров.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
+  ogDescription: description
 })
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader
+      :toggle="false"
+      :ui="{ container: 'max-w-7xl' }"
+    >
       <template #left>
         <NuxtLink
-          to="/"
+          :to="siteUrl"
+          target="_blank"
           class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
         >
-          <AppLogo class="w-auto h-6 shrink-0" />
+          <AppLogo />
         </NuxtLink>
-
-        <TemplateMenu />
       </template>
 
       <template #right>
-        <UColorModeButton />
-
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          :to="siteUrl"
           target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
+          label="Попробовать бесплатно"
+          trailing-icon="i-lucide-arrow-up-right"
+          size="sm"
+          class="hidden sm:inline-flex"
         />
       </template>
     </UHeader>
@@ -56,21 +56,19 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          © {{ new Date().getFullYear() }} StreamsPanel
         </p>
       </template>
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          :to="siteUrl"
           target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
+          label="streams-panel.ru"
+          trailing-icon="i-lucide-arrow-up-right"
           color="neutral"
           variant="ghost"
         />

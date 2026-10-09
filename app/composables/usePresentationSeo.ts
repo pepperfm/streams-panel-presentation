@@ -26,7 +26,7 @@ export function usePresentationSeo() {
     return `${origin}${url.startsWith('/') ? url : `/${url}`}`
   }
 
-  const poster = absolute(media.poster(hero.id))
+  const poster = absolute(media.posterJpg(hero.id))
   const video = absolute(media.hd(hero.id))
 
   useSeoMeta({
@@ -40,7 +40,7 @@ export function usePresentationSeo() {
     ogLocale: 'ru_RU',
     ogImage: poster,
     ogImageAlt: hero.title,
-    ogImageType: 'image/webp',
+    ogImageType: 'image/jpeg',
     ogImageWidth: POSTER_WIDTH,
     ogImageHeight: POSTER_HEIGHT,
     ogVideo: video,
@@ -66,7 +66,7 @@ export function usePresentationSeo() {
           '@type': 'VideoObject',
           'name': item.title,
           'description': item.description,
-          'thumbnailUrl': absolute(media.poster(item.id)),
+          'thumbnailUrl': absolute(media.posterJpg(item.id)),
           'contentUrl': absolute(media.hd(item.id)),
           'duration': `PT${item.duration}S`,
           'width': VIDEO_WIDTH,

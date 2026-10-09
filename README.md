@@ -11,7 +11,6 @@ Videos are not in git: they live in `public/videos/` (gitignored) on the server 
 | `NUXT_PUBLIC_VIDEO_BASE_URL` | `/videos` | Base URL of the media files, no trailing slash |
 | `NUXT_PUBLIC_SITE_URL` | `https://streams-panel.ru` | Target of every CTA |
 | `NUXT_PUBLIC_PRESENTATION_URL` | `https://presentation.streams-panel.ru` | Canonical origin of this page. Rendered canonical, `og:url` and JSON-LD always use one trailing slash |
-| `NUXT_PUBLIC_YANDEX_VERIFICATION` | empty | Yandex Webmaster code for `<meta name="yandex-verification">`. Empty or whitespace omits the tag. Set it at `bun run generate` time; the value is baked into the static HTML |
 
 ## Commands
 

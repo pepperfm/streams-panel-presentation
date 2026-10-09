@@ -30,10 +30,7 @@ export default defineNuxtConfig({
       siteUrl: 'https://streams-panel.ru',
       // Canonical origin of this page. Tags always add one trailing slash.
       // Override: NUXT_PUBLIC_PRESENTATION_URL. public/robots.txt and public/sitemap.xml stay on the production origin.
-      presentationUrl: 'https://presentation.streams-panel.ru',
-      // Yandex Webmaster verification slot. Set NUXT_PUBLIC_YANDEX_VERIFICATION to the code when it is issued.
-      // Empty or whitespace renders no <meta name="yandex-verification">.
-      yandexVerification: ''
+      presentationUrl: 'https://presentation.streams-panel.ru'
     }
   },
 

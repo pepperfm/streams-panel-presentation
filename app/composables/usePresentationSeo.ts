@@ -54,14 +54,10 @@ export function usePresentationSeo() {
     twitterImageAlt: hero.title
   })
 
-  const yandexVerification = config.public.yandexVerification.trim()
   const videos: PresentationVideo[] = [hero, oneQuestion, ...chapters]
 
   useHead({
     link: [{ rel: 'canonical', href: canonical }],
-    meta: yandexVerification
-      ? [{ name: 'yandex-verification', content: yandexVerification }]
-      : [],
     script: [{
       type: 'application/ld+json',
       textContent: {

@@ -23,5 +23,6 @@ logs
 .env.*
 !.env.example
 
-# generated media: uploaded to the CDN, never committed
+# generated media: served from public/videos on the server (or a CDN), never committed
 media
+public/videos

@@ -15,19 +15,12 @@ export const hero: PresentationVideo = {
   duration: 30.13
 }
 
-/** Secondary teaser next to the hero. */
-export const teaser: PresentationVideo = {
+/** Second block under the hero: «Один вопрос». */
+export const oneQuestion: PresentationVideo = {
   id: 'odin-vopros',
   title: 'Один вопрос',
   description: 'Спросите панель про донаты — и попросите неоновый виджет.',
   duration: 26.77
-}
-
-export const trailer: PresentationVideo = {
-  id: 'trailer',
-  title: 'StreamsPanel за две минуты',
-  description: 'Вход, панель, ИИ-ассистент, виджеты и оформление страницы — коротко обо всём.',
-  duration: 120.43
 }
 
 export const chapters: PresentationVideo[] = [

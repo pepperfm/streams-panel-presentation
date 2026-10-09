@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { PresentationVideo } from '~/data/videos'
-import { chapters, hero, teaser, trailer } from '~/data/videos'
+import { chapters, hero, oneQuestion } from '~/data/videos'
 
 const siteUrl = useRuntimeConfig().public.siteUrl
-const media = useVideoMedia()
 const heroPlayer = useTemplateRef<{ play: () => void }>('heroPlayer')
 
-/** Modal player: a playlist (chapters or the single teaser) and the current index. */
+/** Modal player: a playlist (chapters) and the current index. */
 const playlist = shallowRef<PresentationVideo[]>([])
 const current = ref<number | null>(null)
 const open = computed({
@@ -69,42 +68,23 @@ const tryLink = { label: 'Попробовать бесплатно', to: siteUr
           ref="heroPlayer"
           :title="hero.title"
         />
-        <div class="mt-4 flex flex-col items-center justify-between gap-3 sm:flex-row">
-          <p class="text-sm text-muted">
-            {{ hero.title }} · {{ formatDuration(hero.duration) }}
-          </p>
-          <UButton
-            color="neutral"
-            variant="ghost"
-            :aria-label="`Смотреть: ${teaser.title}`"
-            class="gap-3 p-1.5 pe-3"
-            @click="play([teaser])"
-          >
-            <img
-              :src="media.poster(teaser.id)"
-              alt=""
-              class="aspect-video w-20 rounded object-cover ring ring-default"
-            >
-            <span class="text-start">
-              <span class="block text-sm font-medium text-highlighted">Ещё видео: «{{ teaser.title }}»</span>
-              <span class="block text-xs text-muted">{{ teaser.description }} · {{ formatDuration(teaser.duration) }}</span>
-            </span>
-          </UButton>
-        </div>
+        <p class="mt-4 text-center text-sm text-muted">
+          {{ hero.title }} · {{ formatDuration(hero.duration) }}
+        </p>
       </div>
     </UPageHero>
 
     <UPageSection
-      id="trailer"
-      headline="Обзор"
-      :title="trailer.title"
-      :description="trailer.description"
+      id="one-question"
+      headline="Ещё видео"
+      :title="oneQuestion.title"
+      :description="`${oneQuestion.description} · ${formatDuration(oneQuestion.duration)}`"
       :ui="{ container: 'py-12 sm:py-16 lg:py-20' }"
     >
       <div class="mx-auto w-full max-w-5xl">
         <VideoPlayer
-          :id="trailer.id"
-          :title="trailer.title"
+          :id="oneQuestion.id"
+          :title="oneQuestion.title"
         />
       </div>
     </UPageSection>

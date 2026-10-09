@@ -22,7 +22,7 @@ defineExpose({ play })
       :controls="started"
       :autoplay="autoplay"
       :aria-label="title"
-      preload="none"
+      preload="metadata"
       playsinline
       @play="started = true"
     >

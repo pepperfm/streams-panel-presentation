@@ -1,4 +1,4 @@
-// Local preview of the generated site: serves .output/public and maps /videos/* to ./media (with Range support).
+// Local preview of the generated site: serves .output/public and maps /videos/* to ./public/videos (with Range support).
 import { createReadStream, statSync } from 'node:fs'
 import { createServer } from 'node:http'
 import { extname, join, normalize, resolve } from 'node:path'
@@ -9,7 +9,7 @@ const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '
 
 function resolvePath(url) {
   const path = normalize(decodeURIComponent(new URL(url, 'http://x').pathname))
-  if (path.startsWith('/videos/')) return join(root, 'media', path.slice(8))
+  if (path.startsWith('/videos/')) return join(root, 'public', 'videos', path.slice(8))
   const file = join(root, '.output/public', path)
   return path.endsWith('/') ? join(file, 'index.html') : file
 }

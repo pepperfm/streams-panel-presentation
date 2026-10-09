@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
-# Builds media/ (gitignored, uploaded to the CDN) from the final StreamsPanel videos: 1080p (copied), 720p (H.264), posters (jpg+webp),
+# Builds public/videos/ (gitignored, served by Nuxt from /videos or uploaded to a CDN) from the final StreamsPanel videos: 1080p (copied), 720p (H.264), posters (jpg+webp),
 # muted 4 s hover previews (480p mp4+webm) and manifest.json.
 set -euo pipefail
 SRC=${SRC:-/workspace/sp-video/final}
 CONCEPTS=${CONCEPTS:-/workspace/sp-video/concepts}
-OUT=${OUT:-$(dirname "$0")/../media}
+OUT=${OUT:-$(dirname "$0")/../public/videos}
 mkdir -p "$OUT"
 # id | source | poster_t | preview_start
 ITEMS=(
   "bylo-stalo|$CONCEPTS/final-2-bylo-stalo-wipe.mp4|10.8|"
   "odin-vopros|$CONCEPTS/final-1-odin-vopros.mp4|5.6|"
-  "trailer|00_trailer_long.mp4|1.5|"
   "01-vhod-i-profil|01_vhod_i_profil.mp4|9.0|7.0"
   "02-panel|02_panel.mp4|16.0|34.0"
   "03-assistant|03_assistant.mp4|18.0|5.0"

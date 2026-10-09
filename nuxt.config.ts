@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      // NUXT_PUBLIC_VIDEO_BASE_URL — where media/ is uploaded (Beget CDN), e.g. https://<cdn-domain>/presentations
+      // default: files in public/videos served by Nuxt; NUXT_PUBLIC_VIDEO_BASE_URL can point to a CDN later
       videoBaseUrl: '/videos',
       siteUrl: 'https://streams-panel.ru'
     }

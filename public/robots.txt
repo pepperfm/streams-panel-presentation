@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://presentation.streams-panel.ru/sitemap.xml

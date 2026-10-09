@@ -1,44 +1,64 @@
-# Streams Panel — презентация
+# Nuxt Starter Template
 
-Презентация продукта [Streams Panel](https://streams-panel.ru): 16 слайдов на [Slidev](https://sli.dev). Текст совпадает с утверждённым черновиком.
+[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
 
-## Требования
+Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
 
-[Bun](https://bun.sh).
+- [Live demo](https://starter-template.nuxt.dev/)
+- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
 
-## Запуск
+<a href="https://starter-template.nuxt.dev/" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
+    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
+  </picture>
+</a>
+
+> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+
+## Quick Start
+
+```bash [Terminal]
+npm create nuxt@latest -- -t ui
+```
+
+## Deploy your own
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
+
+## Setup
+
+Make sure to install the dependencies:
 
 ```bash
-bun install
-bun run dev
+pnpm install
 ```
 
-Локальный сервер откроет колоду. Клавиша пробела показывает следующий слайд или следующую карточку.
+## Development Server
 
-## Сборка
+Start the development server on `http://localhost:3000`:
 
 ```bash
-bun run build
+pnpm dev
 ```
 
-Статический SPA собирается в каталог `dist/`.
+## Production
 
-## Экспорт в PDF
+Build the application for production:
 
 ```bash
-bun run export
+pnpm build
 ```
 
-Файл появится как `streams-panel.pdf` в корне репозитория. Для картинок каждого слайда:
+Locally preview production build:
 
 ```bash
-bunx slidev export --format png --output slides-png
+pnpm preview
 ```
 
-## Как добавить скриншот
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-Положите файл в `public/screens/` и укажите путь в компоненте `Shot`. Если `src` не задан, остаётся тёмная рамка с подписью.
+## Renovate integration
 
-```html
-<Shot src="/screens/schedule.png" caption="Скриншот: расписание в панели" />
-```
+Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.

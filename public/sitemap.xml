@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://presentation.streams-panel.ru/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/bylo-stalo-poster.jpg</video:thumbnail_loc>
+      <video:title>Было → Стало</video:title>
+      <video:description>Таблицы, вкладки, заметки и оверлеи — теперь в одной панели.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/bylo-stalo-1080.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/odin-vopros-poster.jpg</video:thumbnail_loc>
+      <video:title>Один вопрос</video:title>
+      <video:description>Спросите панель про донаты — и попросите неоновый виджет.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/odin-vopros-1080.mp4</video:content_loc>
+      <video:duration>27</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/01-vhod-i-profil-poster.jpg</video:thumbnail_loc>
+      <video:title>Вход и профиль</video:title>
+      <video:description>Вход через DonationAlerts в пару кликов — и публичная страница стримера уже готова.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/01-vhod-i-profil-1080.mp4</video:content_loc>
+      <video:duration>28</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/02-panel-poster.jpg</video:thumbnail_loc>
+      <video:title>Панель за минуту</video:title>
+      <video:description>Расписание, постер недели, вишлист и события — всё в одной панели.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/02-panel-1080.mp4</video:content_loc>
+      <video:duration>49</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/03-assistant-poster.jpg</video:thumbnail_loc>
+      <video:title>ИИ-ассистент</video:title>
+      <video:description>Спросите про донаты или попросите добавить цель — ассистент предложит, вы подтвердите.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/03-assistant-1080.mp4</video:content_loc>
+      <video:duration>38</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/04-widget-poster.jpg</video:thumbnail_loc>
+      <video:title>Виджеты для OBS</video:title>
+      <video:description>Опишите виджет словами — получите живое превью и готовую ссылку для OBS.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/04-widget-1080.mp4</video:content_loc>
+      <video:duration>29</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/05-style-poster.jpg</video:thumbnail_loc>
+      <video:title>Оформление страницы</video:title>
+      <video:description>Опишите стиль — ИИ подготовит оформление, вы проверите и примените.</video:description>
+      <video:content_loc>https://presentation.streams-panel.ru/videos/05-style-1080.mp4</video:content_loc>
+      <video:duration>51</video:duration>
+    </video:video>
+  </url>
+</urlset>

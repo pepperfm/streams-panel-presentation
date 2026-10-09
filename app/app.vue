@@ -12,16 +12,6 @@ useHead({
     { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }
   ]
 })
-
-const title = 'StreamsPanel — видео-презентация'
-const description = 'Донаты и топ донатеров, расписание и постер недели, вишлист и магазин, виджеты для OBS и ИИ-ассистент в одной панели для стримеров.'
-
-useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description
-})
 </script>
 
 <template>

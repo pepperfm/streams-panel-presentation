@@ -2,6 +2,8 @@
 import type { PresentationVideo } from '~/data/videos'
 import { chapters, hero, oneQuestion } from '~/data/videos'
 
+usePresentationSeo()
+
 const siteUrl = useRuntimeConfig().public.siteUrl
 const heroPlayer = useTemplateRef<{ play: () => void }>('heroPlayer')
 

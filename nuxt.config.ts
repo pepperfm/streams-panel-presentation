@@ -26,7 +26,11 @@ export default defineNuxtConfig({
     public: {
       // default: files in public/videos served by Nuxt; NUXT_PUBLIC_VIDEO_BASE_URL can point to a CDN later
       videoBaseUrl: '/videos',
-      siteUrl: 'https://streams-panel.ru'
+      // Product CTA. This is not the canonical URL of the presentation page.
+      siteUrl: 'https://streams-panel.ru',
+      // Canonical origin of this page. Tags always add one trailing slash.
+      // Override: NUXT_PUBLIC_PRESENTATION_URL. public/robots.txt and public/sitemap.xml stay on the production origin.
+      presentationUrl: 'https://presentation.streams-panel.ru'
     }
   },
 

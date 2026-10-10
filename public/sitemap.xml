@@ -4,10 +4,10 @@
     <loc>https://presentation.streams-panel.ru/</loc>
     <video:video>
       <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/bylo-stalo-poster.jpg</video:thumbnail_loc>
-      <video:title>Было → Стало</video:title>
-      <video:description>Таблицы, вкладки, заметки и оверлеи — теперь в одной панели.</video:description>
+      <video:title>Вкладки → один центр</video:title>
+      <video:description>Расписание, донаты, вишлист, профиль, постер и виджеты OBS — в одной панели вместо десятка вкладок.</video:description>
       <video:content_loc>https://presentation.streams-panel.ru/videos/bylo-stalo-1080.mp4</video:content_loc>
-      <video:duration>30</video:duration>
+      <video:duration>28</video:duration>
     </video:video>
     <video:video>
       <video:thumbnail_loc>https://presentation.streams-panel.ru/videos/odin-vopros-poster.jpg</video:thumbnail_loc>

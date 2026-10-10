@@ -7,12 +7,12 @@ export interface PresentationVideo {
   preview?: boolean
 }
 
-/** Hero: «Было → Стало» (before/after wipe edit). */
+/** Hero: «Вкладки и центр управления» (files keep the bylo-stalo-* names). */
 export const hero: PresentationVideo = {
   id: 'bylo-stalo',
-  title: 'Было → Стало',
-  description: 'Таблицы, вкладки, заметки и оверлеи — теперь в одной панели.',
-  duration: 30.13
+  title: 'Вкладки → один центр',
+  description: 'Расписание, донаты, вишлист, профиль, постер и виджеты OBS — в одной панели вместо десятка вкладок.',
+  duration: 28
 }
 
 /** Second block under the hero: «Один вопрос». */

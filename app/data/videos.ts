@@ -7,12 +7,12 @@ export interface PresentationVideo {
   preview?: boolean
 }
 
-/** Hero: «Вкладки и центр управления» (files keep the bylo-stalo-* names). */
+/** Hero: «Спроси свою панель» (files keep the bylo-stalo-* names). */
 export const hero: PresentationVideo = {
   id: 'bylo-stalo',
-  title: 'Вкладки → один центр',
-  description: 'Расписание, донаты, вишлист, профиль, постер и виджеты OBS — в одной панели вместо десятка вкладок.',
-  duration: 28
+  title: 'Спроси свою панель',
+  description: 'AI-ассистент отвечает по твоим данным и сам создаёт игры, стримы в расписании и виджеты — просто напиши ему.',
+  duration: 34
 }
 
 /** Second block under the hero: «Один вопрос». */

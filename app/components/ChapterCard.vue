@@ -55,7 +55,6 @@ const hovered = ref(false)
             size="sm"
           />
           <UBadge
-            :label="formatDuration(chapter.duration)"
             icon="i-lucide-play"
             color="primary"
             variant="solid"

@@ -71,7 +71,7 @@ const tryLink = { label: 'Попробовать бесплатно', to: siteUr
           :title="hero.title"
         />
         <p class="mt-4 text-center text-sm text-muted">
-          {{ hero.title }} · {{ formatDuration(hero.duration) }}
+          {{ hero.title }}
         </p>
       </div>
     </UPageHero>
@@ -80,7 +80,7 @@ const tryLink = { label: 'Попробовать бесплатно', to: siteUr
       id="one-question"
       headline="Ещё видео"
       :title="oneQuestion.title"
-      :description="`${oneQuestion.description} · ${formatDuration(oneQuestion.duration)}`"
+      :description="oneQuestion.description"
       :ui="{ container: 'py-12 sm:py-16 lg:py-20' }"
     >
       <div class="mx-auto w-full max-w-5xl">

@@ -9,7 +9,6 @@ mkdir -p "$OUT"
 # id | source | poster_t | preview_start
 ITEMS=(
   "bylo-stalo|$CONCEPTS/final-2-bylo-stalo-wipe.mp4|10.8|"
-  "odin-vopros|$CONCEPTS/final-1-odin-vopros.mp4|5.6|"
   "01-vhod-i-profil|01_vhod_i_profil.mp4|9.0|7.0"
   "02-panel|02_panel.mp4|16.0|34.0"
   "03-assistant|03_assistant.mp4|18.0|5.0"

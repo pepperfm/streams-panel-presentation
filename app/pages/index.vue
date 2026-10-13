@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PresentationVideo } from '~/data/videos'
-import { chapters, hero, oneQuestion } from '~/data/videos'
+import { chapters, hero } from '~/data/videos'
 
 usePresentationSeo()
 
@@ -75,21 +75,6 @@ const tryLink = { label: 'Попробовать бесплатно', to: siteUr
         </p>
       </div>
     </UPageHero>
-
-    <UPageSection
-      id="one-question"
-      headline="Ещё видео"
-      :title="oneQuestion.title"
-      :description="oneQuestion.description"
-      :ui="{ container: 'py-12 sm:py-16 lg:py-20' }"
-    >
-      <div class="mx-auto w-full max-w-5xl">
-        <VideoPlayer
-          :id="oneQuestion.id"
-          :title="oneQuestion.title"
-        />
-      </div>
-    </UPageSection>
 
     <UPageSection
       id="chapters"

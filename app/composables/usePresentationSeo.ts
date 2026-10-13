@@ -1,5 +1,5 @@
 import type { PresentationVideo } from '~/data/videos'
-import { chapters, hero, oneQuestion } from '~/data/videos'
+import { chapters, hero } from '~/data/videos'
 
 /** 1080p masters and 1280px posters. Confirmed with ffprobe on the published files (1920×1080, posters 1280×720). */
 const VIDEO_WIDTH = 1920
@@ -54,7 +54,7 @@ export function usePresentationSeo() {
     twitterImageAlt: hero.title
   })
 
-  const videos: PresentationVideo[] = [hero, oneQuestion, ...chapters]
+  const videos: PresentationVideo[] = [hero, ...chapters]
 
   useHead({
     link: [{ rel: 'canonical', href: canonical }],

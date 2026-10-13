@@ -15,14 +15,6 @@ export const hero: PresentationVideo = {
   duration: 34
 }
 
-/** Second block under the hero: «Один вопрос». */
-export const oneQuestion: PresentationVideo = {
-  id: 'odin-vopros',
-  title: 'Один вопрос',
-  description: 'Спросите панель про донаты — и попросите неоновый виджет.',
-  duration: 26.77
-}
-
 export const chapters: PresentationVideo[] = [
   { id: 'claude-20261013/01-profile', title: 'Вход и профиль', duration: 16, preview: true,
     description: 'Вход через DonationAlerts, дополнительные источники донатов и публичная страница стримера.' },

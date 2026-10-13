@@ -28,7 +28,6 @@ bun run dev
 1. `bun install && bun run build`, then run `node .output/server/index.mjs` (or `bun`) behind your proxy.
 2. Copy the media into `public/videos/` before the build (it is copied into `.output/public/videos/`), or put files straight into `.output/public/videos/`:
    - hero «Было → Стало»: `bylo-stalo-1080.mp4`, `bylo-stalo-720.mp4`, `bylo-stalo-poster.webp`, `bylo-stalo-poster.jpg`
-   - «Один вопрос»: `odin-vopros-*` (same four files)
    - chapters `01-vhod-i-profil`, `02-panel`, `03-assistant`, `04-widget`, `05-style`: the four files plus `<id>-preview.webm`, `<id>-preview.mp4`
    - `manifest.json` — inventory, not used by the page
 3. Optional: if nginx proxies the app, `location /videos/ { alias /path/.output/public/videos/; expires 1y; }` serves them from disk.

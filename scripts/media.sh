@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Builds public/videos/ (gitignored, served by Nuxt from /videos or uploaded to a CDN) from the final StreamsPanel videos: 1080p (copied), 720p (H.264), posters (jpg+webp),
-# muted 4 s hover previews (480p mp4+webm) and manifest.json.
+# Builds the hero files in public/videos/ (gitignored, served by Nuxt from /videos or uploaded to a CDN): 1080p (copied), 720p (H.264), posters (jpg+webp)
+# and manifest.json. Chapters ship ready-made in public/videos/claude-20261013/ (see README).
 set -euo pipefail
 SRC=${SRC:-/workspace/sp-video/final}
 CONCEPTS=${CONCEPTS:-/workspace/sp-video/concepts}
@@ -9,11 +9,6 @@ mkdir -p "$OUT"
 # id | source | poster_t | preview_start
 ITEMS=(
   "bylo-stalo|$CONCEPTS/final-2-bylo-stalo-wipe.mp4|10.8|"
-  "01-vhod-i-profil|01_vhod_i_profil.mp4|9.0|7.0"
-  "02-panel|02_panel.mp4|16.0|34.0"
-  "03-assistant|03_assistant.mp4|18.0|5.0"
-  "04-widget|04_widget.mp4|14.0|12.5"
-  "05-style|05_style.mp4|42.5|4.0"
 )
 H264=(-c:v libx264 -profile:v high -pix_fmt yuv420p -tag:v avc1 -movflags +faststart)
 for it in "${ITEMS[@]}"; do

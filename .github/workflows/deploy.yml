@@ -23,5 +23,6 @@ jobs:
           echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          ssh-keyscan -H 93.188.187.113 >> ~/.ssh/known_hosts
       - name: Rsync
-        run: rsync -az --delete --exclude 'videos/' .output/public/ pechka@193.168.46.66:/home/pechka/presentation-www/
+        run: rsync -az --delete --exclude 'videos/' .output/public/ pechka@93.188.187.113:/home/pechka/presentation-www/
